@@ -1,9 +1,18 @@
 import { Router } from "express";
-import { getAllStudents, getStudentById } from "../controllers/student";
+import { 
+    getAllStudents, 
+    getStudentById, 
+    addStudent, 
+    updateStudent, 
+    deleteStudent 
+} from "../controllers/student";
 
 const router = Router();
 
-router.get('/', getAllStudents);
-router.post('/student', getStudentById);
+router.get("/", getAllStudents); 
+router.get("/:id", getStudentById); 
+router.post("/", addStudent); 
+router.put("/:id", updateStudent); 
+router.delete("/:id", deleteStudent); 
 
 export default router;

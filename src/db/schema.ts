@@ -4,12 +4,12 @@ export const students = pgTable("students", {
     id: uuid("id").primaryKey().defaultRandom(),
     name: text("name").notNull(),
     rollNo: text("roll_no").notNull().unique(),
-    course: text("course").notNull(),
+    course: text("course"),
     age: integer("age").notNull(),
     mail: text("mail").notNull().unique(),
     location: text("location").notNull(),
     phoneNumber: varchar("phone_number").notNull(),
-    courseYear: integer("course_year").notNull(),
+    courseYear: integer("course_year"),
 });
 
 export type Student = typeof students.$inferSelect;

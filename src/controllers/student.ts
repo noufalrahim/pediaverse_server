@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { AddStudent, DeleteStudent, GetAllStudents, GetStudentById, UpdateStudent } from "../models/Student";
 
-// ✅ Get all students
 export const getAllStudents = async (req: Request, res: Response) => {
     try {
         const students = await GetAllStudents();
@@ -12,7 +11,6 @@ export const getAllStudents = async (req: Request, res: Response) => {
     }
 };
 
-// ✅ Get student by ID
 export const getStudentById = async (req: Request<{ id: string }>, res: Response) => {
     try {
         const { id } = req.params;
@@ -33,7 +31,7 @@ export const addStudent = async (req: Request, res: Response) => {
     try {
         const { name, rollNo, course, age, mail, location, phoneNumber, courseYear } = req.body;
 
-        if (!name || !rollNo || !course || !age || !mail || !location || !phoneNumber || !courseYear) {
+        if (!name || !rollNo || !age || !mail || !location) {
             res.status(400).json({ error: "All fields are required" });
             return;
         }

@@ -8,8 +8,8 @@ export default defineConfig({
         host: "localhost",
         port: 5432,
         database: "pediaversedb",
-        user: "postgres",
-        password: "noufalrahim",
+        user: "sanin",
+        password: "sanin",
         ssl: false,
     },
 });

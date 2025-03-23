@@ -6,7 +6,8 @@ COPY . .
 
 RUN npm install
 
+RUN cd src && npx drizzle-kit push
+
 EXPOSE 8000
 
-# Run the application through ProxyChains
 CMD ["npm", "run", "dev"]

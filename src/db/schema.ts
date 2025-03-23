@@ -49,7 +49,8 @@ export type NewSkillsCategory = typeof skillsCategory.$inferInsert;
 export const skillsAndInterests = pgTable("skills_and_interests", {
     id: uuid("id").primaryKey().defaultRandom(),
     studentId: uuid("student_id").notNull().references(() => students.id, { onDelete: 'cascade' }),
-    categoryId: uuid("category_id").notNull().references(() => skillsCategory.id, { onDelete: 'cascade' }),
+    // categoryId: uuid("category_id").notNull().references(() => skillsCategory.id, { onDelete: 'cascade' }),
+    categoryId: text("category_id").notNull(),
     skillName: text("skill_name").notNull(),
     level: integer("level"),
 });

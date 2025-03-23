@@ -10,7 +10,7 @@ import {
 
 const router = Router();
 
-router.get("/", getAllObservations); 
+router.get("/", getAllObservations);    
 router.get("/student/:studentId", getObservationsByStudentId); 
 router.get("/mentor/:mentorId", getObservationsByMentorId); 
 router.post("/", addObservation); 

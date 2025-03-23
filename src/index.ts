@@ -29,7 +29,7 @@ app.use("/api/skills-and-interests", skillsAndInterestsRoutes);
 app.use("/api/extracurriculars", extracurricularsRoutes);
 app.use("/api/competency-categories", competencyCategoryRoutes);
 app.use("/api/competencies", competencyRoutes);
-app.use("/api/observations", observationRoutes);
+app.use("/api/", observationRoutes);
 
 
 app.use('/', (req, res) => {
